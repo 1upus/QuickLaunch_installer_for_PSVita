@@ -1,3 +1,4 @@
+--Русификатор для AdrenalineBubbleManager 4.01 by lupus
 --Texts (only text in " ")
 strings = {
 
