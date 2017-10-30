@@ -1,9 +1,16 @@
-# psv_translations
-web folder with tools and translations for PS Vita
+# QuickLaunch Installer for PS Vita
 
-see also my folder@mega:
-https://mega.nz/#F!E4MAnQAT!yCyQQK2kwzUI_PK1nDIWfQ
+This tool installs custom shortcuts to multitasking menu (push PS button on LiveArea) on HomeBrew enabled PS Vita.
 
-lupus ~ bad_lupu[at]ua[dot]fm
+Default shortcuts for installation:
 
-tagteam.ru
+- VitaShell
+- Adrenaline v6+
+- PKGi
+
+App created with LUA and based on sources by Team OneLua. https://github.com/ONElua/
+
+Todo:
+- Add support for userfriendly custom shortcuts installation.
+
+lupus
