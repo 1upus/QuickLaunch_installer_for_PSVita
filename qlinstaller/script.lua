@@ -61,7 +61,7 @@ if os.access() == 0 then
 end
 
 --Auto-Update
---dofile("git/updater.lua")
+dofile("git/updater.lua")
 
 ------------------------------------------Main--------------------------------------------------------------
 -- Copy sample data to ux0:data/mmminstal
