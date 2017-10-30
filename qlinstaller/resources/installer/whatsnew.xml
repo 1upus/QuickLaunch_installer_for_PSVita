@@ -1,0 +1,20 @@
+<nsx><spc>
+<mtrl anno="" from="2001-01-01T00:00:00.000Z" id="1" lastm="2001-01-01T00:00:00.000Z" mname="" until="2100-12-31T23:59:00.000Z" >
+ <url type="106" >app01.png</url>
+ <target type="u" >psgm:play?titleid=VITASHELL</target>
+ <cntry agelmt="18" >all</cntry>
+ <lang >all</lang>
+</mtrl>
+<mtrl anno="" from="2001-01-01T00:00:00.000Z" id="2" lastm="2001-01-01T00:00:00.000Z" mname="" until="2100-12-31T23:59:00.000Z" >
+ <url type="106" >app02.png</url>
+ <target type="u" >psgm:play?titleid=PSPEMUCFW</target>
+ <cntry agelmt="18" >all</cntry>
+ <lang >all</lang>
+</mtrl>
+<mtrl anno="" from="2001-01-01T00:00:00.000Z" id="3" lastm="2001-01-01T00:00:00.000Z" mname="" until="2100-12-31T23:59:00.000Z" >
+ <url type="106" >app03.png</url>
+ <target type="u" >psgm:play?titleid=PKGI00000</target>
+ <cntry agelmt="18" >all</cntry>
+ <lang >all</lang>
+</mtrl>
+</spc></nsx>
