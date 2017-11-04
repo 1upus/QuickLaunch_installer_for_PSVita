@@ -1,0 +1,37 @@
+--Texts (only text in " ")
+strings = {
+
+-- QL script.lua
+caption =       "QuickLaunch Installer v0.2",
+unsafe =		"LA MODALITA' NON SICURA è richiesta per questo Homebrew !!!",
+menuline01 =    "Installa i dati di default del QL ",
+menuline02 =    "Installa i dati user del QL ",
+menuline03 =    "Cancella tutti i dati del QL ",
+menuline04 =    "Ritorna al LiveArea",
+
+-- QL common.lua
+future_msg =    "Funzione riservata per versioni future.",
+qlinst01 =      "I dati del QuickLaunch sono stati installati.\n\nRiavviare la PSVITA per rendere effettive le modifiche.",
+qlinst02 =      "I dati User del QuickLaunch sono stati installati.\n\nRiavviare la PSVITA per rendere effettive le modifiche.",
+cleardata =     "Tutti i dati del QuickLanch sono stati cancellati.\nI dati di default SCE verrano ripristinati alla prossima\nconnessione internet .\n\nRiavviare la PSVITA per rendere effettive le modifiche.",
+preview =       "Anteprima: scorciatoie per l'installazione del QuickLaunch.",
+
+unk =			"UNK",
+
+--custom message
+title_msg =		"Messaggio di Sistema",
+option_msg =	"OK",
+option1_msg =	"Si",
+option2_msg =	"No",
+
+--updater.lua
+update_msg1 =   "è adesso disponibile.",
+update_msg2 =   "Vuoi aggiornare l'applicazione?",
+downupdate =    "Scaricamento dell'aggiornamento in corso...",
+size_msg =      "Dimensione",
+written_msg =   "Scrittura",
+speed_msg =     "Velocità",
+percent_msg =   "Percentuale",
+kbs_msg =       "Kb/s",
+
+}
