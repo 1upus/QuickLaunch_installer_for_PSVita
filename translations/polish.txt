@@ -1,0 +1,37 @@
+--Texts (only text in " ")
+strings = {
+
+-- QL script.lua
+caption =       "QuickLaunch Installer v0.1",
+unsafe =		"Dla tej aplikacji wymagane jest włączenie ''podejrzanego homebrew'' w ustawieniach HENkaku !!!",
+menuline01 =    "Zainstaluj domyślne skróty QL",
+menuline02 =    "Zainstaluj własne skróty QL",
+menuline03 =    "Wyczyść wszystkie skróty QL",
+menuline04 =    "Wyjdź do LiveArea",
+
+-- QL common.lua
+future_msg =    "Funkcja zarezerwowana dla przyszłych wydań.",
+qlinst01 =      "Domyślne skróty QuickLaunch zostały zainstalowane.\n\nUruchom ponownie PS Vita.",
+qlinst02 =      "Własne skróty QuickLaunch zostały zainstalowane.\n\nUruchom ponownie PS Vita.",
+cleardata =     "Wszystkie skróty zostały usunięte.\nDomyślne skróty zostaną przywrócone podczas\npołączenia z internetem.\n\nUruchom ponownie PSVita.",
+preview =       "Podgląd: skróty QuickLaunch.",
+
+unk =			"???",
+
+--custom message
+title_msg =		"Wiadomość systemowa",
+option_msg =	"OK",
+option1_msg =	"Tak",
+option2_msg =	"Nie",
+
+--updater.lua
+update_msg1 =   "jest dostępna.",
+update_msg2 =   "Chcesz zaktualizować aplikację?",
+downupdate =    "Pobieranie aktualizacji...",
+size_msg =      "Rozmiar",
+written_msg =   "Zapisano",
+speed_msg =     "Szybkość",
+percent_msg =   "Procent",
+kbs_msg =       "Kb/s",
+
+}
