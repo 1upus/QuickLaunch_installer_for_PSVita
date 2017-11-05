@@ -65,10 +65,11 @@ If you have incorrect width of default font chars, try to use russian.ttf as cus
 
 Please report me if it helps and your language, I'll make needed font loading automatic.
 
-Also you can add you custom translation to my repo, just fork it and add your translation to "translations" folder.
+Also you can add you custom translation to my repo, just fork it and add your translation to "translations" folder and make pull request.
 
 ** Todo: **
 
+- Optimize specific font loading translations 
 - Add support for userfriendly custom shortcuts installation.
 
 ** Thx **
