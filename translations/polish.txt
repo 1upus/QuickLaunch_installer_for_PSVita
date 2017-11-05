@@ -11,9 +11,9 @@ menuline04 =    "Wyjdź do LiveArea",
 
 -- QL common.lua
 future_msg =    "Funkcja zarezerwowana dla przyszłych wydań.",
-qlinst01 =      "Domyślne skróty QuickLaunch zostały zainstalowane.\n\nUruchom ponownie PS Vita.",
-qlinst02 =      "Własne skróty QuickLaunch zostały zainstalowane.\n\nUruchom ponownie PS Vita.",
-cleardata =     "Wszystkie skróty zostały usunięte.\nDomyślne skróty zostaną przywrócone podczas\npołączenia z internetem.\n\nUruchom ponownie PSVita.",
+qlinst01 =      "Domyślne skróty QuickLaunch zostały zainstalowane.\n\nSystem PS Vita zostanie uruchomiony ponownie.",
+qlinst02 =      "Własne skróty QuickLaunch zostały zainstalowane.\n\nSystem PS Vita zostanie uruchomiony ponownie.",
+cleardata =     "Wszystkie skróty zostały usunięte.\nDomyślne skróty zostaną przywrócone podczas\npołączenia z internetem.\n\nSystem PS Vita zostanie uruchomiony ponownie.",
 preview =       "Podgląd: skróty QuickLaunch.",
 
 unk =			"???",
