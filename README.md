@@ -20,24 +20,43 @@ Please use ux0:data/qlinstall/lang/english_us.txt as base to make your translati
 Also you can use custom .ttf font specific to your language. Just put it to ux0:data/qlinstall/resources/%language%.ttf
 
 File naming for translations *.txt and fonts *.ttf:
+
 japanese
+
 english_us
+
 french
+
 spanish
+
 german
+
 italian
+
 dutch
+
 portuguese
+
 russian
+
 korean
+
 chinese_t
+
 chinese_s
+
 finnish
+
 swedish
+
 danish
+
 norwegian
+
 polish
+
 portuguese_br
+
 turkish
 
 If your translation doesnt loading automaticly, it can miss some strings, so check actual english_us.txt to fix it.
@@ -45,6 +64,8 @@ If your translation doesnt loading automaticly, it can miss some strings, so che
 If you have incorrect width of default font chars, try to use russian.ttf as custom font and rename to %language%.ttf it may fix problem with cyrillic languages.
 
 Please report me if it helps and your language, I'll make needed font loading automatic.
+
+Also you can add you custom translation to my repo, just fork it and add your translation to "translations" folder.
 
 ** Todo: **
 
