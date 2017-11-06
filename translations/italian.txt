@@ -2,7 +2,7 @@
 strings = {
 
 -- QL script.lua
-caption =       "QuickLaunch Installer v0.2",
+caption =       "QuickLaunch Installer",
 unsafe =		"LA MODALITA' NON SICURA è richiesta per questo Homebrew !!!",
 menuline01 =    "Installa i dati di default del QL ",
 menuline02 =    "Installa i dati user del QL ",
