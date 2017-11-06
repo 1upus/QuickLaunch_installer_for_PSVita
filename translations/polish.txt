@@ -2,7 +2,7 @@
 strings = {
 
 -- QL script.lua
-caption =       "QuickLaunch Installer v0.1",
+caption =       "QuickLaunch Installer",
 unsafe =		"Dla tej aplikacji wymagane jest włączenie ''podejrzanego homebrew'' w ustawieniach HENkaku !!!",
 menuline01 =    "Zainstaluj domyślne skróty QL",
 menuline02 =    "Zainstaluj własne skróty QL",
