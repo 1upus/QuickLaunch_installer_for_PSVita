@@ -11,16 +11,16 @@ menuline04 =    "Exit to LiveArea",
 
 -- QL common.lua
 future_msg =    "Function reserved for future releases.",
-qlinst01 =      "QuickLaunch data has been installed.\n\nWe need to restart your PS Vita.",
-qlinst02 =      "User QuickLaunch data has been installed.\n\nWe need to restart your PS Vita.",
-cleardata =     "All QuickLanch data was cleared.\nActual SCE data will be restored after next\ninternet connection.\n\nWe need to restart your PSVita.",
+qlinst01 =      "Install default QuickLaunch data and restart PS Vita?",
+qlinst02 =      "Install QuickLaunch data from userapps.ini and restart PS Vita?",
+cleardata =     "Delete current QuickLanch data and restart PS Vita?\n\n*Actual SCE data will be restored after next\n\ninternet connection.",
 preview =       "Preview: shortcuts for QuickLaunch installation.",
 
 unk =			"UNK",
 
 --custom message
 title_msg =		"System Message",
-option_msg =	"OK",
+option_msg =	"Ok",
 option1_msg =	"Yes",
 option2_msg =	"No",
 
