@@ -55,11 +55,11 @@ end
 
 -- Preview default mod function
 function modprev01()
- draw.fillrect(0,406,960,138, 0x64545353) --UP
- screen.print(10,416,strings.preview,1,color.white,color.blue,__ALEFT)
- if defapp01 then defapp01:blit(40,436) end 
- if defapp02 then defapp02:blit(339,436) end 
- if defapp03 then defapp03:blit(641,436) end 
+ draw.fillrect(0,394,960,150, 0x64545353) --UP
+ screen.print(10,404,strings.preview,1,color.white,color.blue,__ALEFT)
+ if defapp01 then defapp01:blit(37,424) end 
+ if defapp02 then defapp02:blit(339,424) end 
+ if defapp03 then defapp03:blit(641,424) end 
 end
 
 -- Preview user mod function
@@ -132,10 +132,16 @@ function custom_msg(printtext,mode)
 		screen.print(xtext,200, printtext,1, color.gray)
 
 		if mode == 0 then
-			screen.print(xopt1+120,360, SYMBOL_CROSS.." : "..strings.option_msg,1.02, color.gray)
+			font.setdefault(charfont) screen.print(xopt1+110,360, SYMBOL_CROSS,1.02, color.gray) font.setdefault(textfont)
+			screen.print(xopt1+130,360, " : "..strings.option_msg,1.02, color.gray)
+--			screen.print(xopt1+120,360, SYMBOL_CROSS.." : "..strings.option_msg,1.02, color.gray)
 		else
-			screen.print(xopt1,360, SYMBOL_CROSS.." : "..strings.option1_msg,1.02, color.gray)
-			screen.print(xopt2,360, SYMBOL_CIRCLE.." : "..strings.option2_msg,1.02, color.gray)
+			font.setdefault(charfont)screen.print(xopt1-10,360, SYMBOL_CROSS,1.02, color.gray) font.setdefault(textfont)
+			screen.print(xopt1+10,360, " : "..strings.option1_msg,1.02, color.gray)
+--			screen.print(xopt1,360, SYMBOL_CROSS.." : "..strings.option1_msg,1.02, color.gray)
+			font.setdefault(charfont)screen.print(xopt2-10,360, SYMBOL_CIRCLE,1.02, color.gray) font.setdefault(textfont)
+			screen.print(xopt2+10,360, " : "..strings.option2_msg,1.02, color.gray)
+--			screen.print(xopt2,360, SYMBOL_CIRCLE.." : "..strings.option2_msg,1.02, color.gray)
 		end
 
 		screen.flip()
