@@ -21,7 +21,6 @@ function modinstall01()
  files.copy("resources/installer/app02.png",urpath.."img/")
  files.copy("resources/installer/app03.png",urpath.."img/")
  files.copy("resources/installer/whatsnew.xml",urpath)
- custom_msg(strings.qlinst01,0)
  os.delay(500)
  buttons.homepopup(1)
  power.restart()
@@ -30,17 +29,18 @@ function modinstall01()
 -- Install user mod data function
 function modinstall02()
  buttons.homepopup(0)
- files.delete(urpath.."img")
- files.mkdir(urpath.."img/")
- files.delete(urpath.."whatsnew.xml")
- if files.exists(uxpath.."app01.png") then files.copy(uxpath.."app01.png",urpath.."img/") end
- if files.exists(uxpath.."app02.png") then files.copy(uxpath.."app02.png",urpath.."img/") end
- if files.exists(uxpath.."app03.png") then files.copy(uxpath.."app03.png",urpath.."img/") end
- if files.exists(uxpath.."whatsnew.xml") then files.copy(uxpath.."whatsnew.xml",urpath)  end
- custom_msg(strings.qlinst02,0)
+ if files.exists(uxpath.."userapps.ini") then dofile(uxpath.."userapps.ini")
+ custom_msg(userapps.id01.." "..userapps.path01.."\n\n"..userapps.id02.." "..userapps.path02.."\n\n"..userapps.id03.." "..userapps.path03,0) end
+ --files.delete(urpath.."img")
+ --files.mkdir(urpath.."img/")
+ --files.delete(urpath.."whatsnew.xml")
+ --if files.exists(uxpath.."app01.png") then files.copy(uxpath.."app01.png",urpath.."img/") end
+ --if files.exists(uxpath.."app02.png") then files.copy(uxpath.."app02.png",urpath.."img/") end
+ --if files.exists(uxpath.."app03.png") then files.copy(uxpath.."app03.png",urpath.."img/") end
+ --if files.exists(uxpath.."whatsnew.xml") then files.copy(uxpath.."whatsnew.xml",urpath)  end
  os.delay(500)
  buttons.homepopup(1)
- power.restart()
+ --power.restart()
 end
 
 -- Reset mod data function
@@ -48,7 +48,6 @@ function modreset()
  files.delete(urpath.."img")
  files.mkdir(urpath.."img/")
  files.delete(urpath.."whatsnew.xml")
- custom_msg(strings.cleardata,0)
  os.delay(500)
  power.restart()
 end
@@ -80,8 +79,8 @@ function onAppInstall(step, size_argv, written, file, totalsize, totalwritten)
 		os.delay(10)
 		return 10 -- Ok
 	elseif step == 4 then											-- Installing
-	draw.fillrect(0,0,960,30, 0x64545353) --UP
-        screen.print(10,10,strings.caption,1,color.white,color.blue,__ALEFT)
+	    draw.fillrect(0,0,960,30, 0x64545353) --UP
+        screen.print(10,10,strings.caption.." v"..APP_VERSION_MAJOR.."."..APP_VERSION_MINOR,1,color.white,color.blue,__ALEFT)
 		screen.print(75,75,"Installing...",1,color.white,color.blue)
 		screen.print(10,435,title, 0.9, color.white, color.green, __ALEFT)
 		screen.print(10,470,version, 0.9, color.white, color.green, __ALEFT)
@@ -95,7 +94,7 @@ end
 function init_msg(msg)
 	if back then back:blit(0,0) end
 	draw.fillrect(0,0,960,30, 0x64545353) --UP
-	screen.print(10,10,strings.caption,1,color.white,color.blue,__ALEFT)
+	screen.print(10,10,strings.caption.." v"..APP_VERSION_MAJOR.."."..APP_VERSION_MINOR,1,color.white,color.blue,__ALEFT)
 	screen.print(70, 50, msg, 1.0, color.white, color.cyan:a(100))
 	screen.flip()
 	os.delay(10)
@@ -132,16 +131,19 @@ function custom_msg(printtext,mode)
 		screen.print(xtext,200, printtext,1, color.gray)
 
 		if mode == 0 then
-			font.setdefault(charfont) screen.print(xopt1+110,360, SYMBOL_CROSS,1.02, color.gray) font.setdefault(textfont)
-			screen.print(xopt1+130,360, " : "..strings.option_msg,1.02, color.gray)
---			screen.print(xopt1+120,360, SYMBOL_CROSS.." : "..strings.option_msg,1.02, color.gray)
+			font.setdefault(charfont) 
+			screen.print(xopt1+110,360, SYMBOL_CROSS,1.02, color.gray) 
+			font.setdefault(textfont)
+			screen.print(xopt1+130,360, ": "..strings.option_msg,1.02, color.gray)
 		else
-			font.setdefault(charfont)screen.print(xopt1-10,360, SYMBOL_CROSS,1.02, color.gray) font.setdefault(textfont)
-			screen.print(xopt1+10,360, " : "..strings.option1_msg,1.02, color.gray)
---			screen.print(xopt1,360, SYMBOL_CROSS.." : "..strings.option1_msg,1.02, color.gray)
-			font.setdefault(charfont)screen.print(xopt2-10,360, SYMBOL_CIRCLE,1.02, color.gray) font.setdefault(textfont)
-			screen.print(xopt2+10,360, " : "..strings.option2_msg,1.02, color.gray)
---			screen.print(xopt2,360, SYMBOL_CIRCLE.." : "..strings.option2_msg,1.02, color.gray)
+			font.setdefault(charfont)
+			screen.print(xopt1-10,360, SYMBOL_CROSS,1.02, color.gray) 
+			font.setdefault(textfont)
+			screen.print(xopt1+10,360, ": "..strings.option1_msg,1.02, color.gray)
+			font.setdefault(charfont)
+			screen.print(xopt2-10,360, SYMBOL_CIRCLE,1.02, color.gray)
+			font.setdefault(textfont)
+			screen.print(xopt2+10,360, ": "..strings.option2_msg,1.02, color.gray)
 		end
 
 		screen.flip()

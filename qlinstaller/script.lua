@@ -32,20 +32,20 @@ __LANG = os.language()
 
 -- Loading sa0 fonts for translations
 charfont = "sa0:data/font/pvf/psexchar.pvf"
-jpnfont = "sa0:data/font/pvf/jpn4.pvf"
+cnfont = "sa0:data/font/pvf/cn0.pvf"
+jpnfont = "sa0:data/font/pvf/jpn0.pvf"
 ltnfont = "sa0:data/font/pvf/ltn4.pvf"
-font.load(charfont)
-font.load(jpnfont)
-font.load(ltnfont)
+krfont = "sa0:data/font/pvf/kr0.pvf"
+
 if __LANG == "RUSSIAN" 
  or __LANG == "POLISH"
-  then textfont=(ltnfont)
-  else textfont=(jpnfont)
+  then font.load(charfont) font.load(ltnfont) textfont=(ltnfont)
+  else font.load(charfont) font.load(jpnfont) textfont=(jpnfont)
 end
 font.setdefault(textfont)
 
 -- Loading Special chars
-if charfont then
+if charfont then -- Use oficial ps symbols. Will not work without preloaded psexchr.pvf font
 SYMBOL_CROSS	= "&"
 SYMBOL_SQUARE   = "'"
 SYMBOL_TRIANGLE = "$"
@@ -62,10 +62,11 @@ if files.exists(uxpath.."lang/"..__LANG..".txt") then dofile(uxpath.."lang/"..__
 else 
 -- reading lang strings fom app folder if exist
 	if files.exists("resources/lang/"..__LANG..".txt") then dofile("resources/lang/"..__LANG..".txt")
+-- checking missing strings in translation file
 	local cont = 0
 	for key,value in pairs(strings) do cont += 1 end
 	if cont < 23 then files.copy("resources/lang/english_us.txt",uxpath.."lang/") dofile("resources/lang/english_us.txt") end
--- reading default lang strings if no one translations founded
+-- reading default lang strings if no one translations founded or translation have missed strings
 else files.copy("resources/lang/english_us.txt",uxpath.."lang/") dofile("resources/lang/english_us.txt") end
 end
 
@@ -87,10 +88,6 @@ dofile("git/updater.lua")
  if not files.exists(uxpath.."whatsnew.xml") then files.copy("resources/installer/whatsnew.xml",uxpath) end
  if not files.exists(uxpath.."userapps.ini") then files.copy("resources/installer/userapps.ini",uxpath) end
  
- 
--- Read userdata from .ini if exists
- if files.exists(uxpath.."userapps.ini") then dofile(uxpath.."userapps.ini") end
- 
 dofile("system/commons.lua")
 
 options = { strings.menuline01, strings.menuline02, strings.menuline03, strings.menuline04}
@@ -102,8 +99,7 @@ while true do
 
 	if back then back:blit(0,0) end
 	draw.fillrect(0,0,960,30, 0x64545353) --UP
-	--font.setdefault(charfont) screen.print(10,10,"$%&'`",1,color.white,color.blue,__ALEFT) font.setdefault(textfont)
-	screen.print(10,10,strings.caption.."v"..APP_VERSION_MAJOR.."."..APP_VERSION_MINOR,1,color.white,color.blue,__ALEFT)
+	screen.print(10,10,strings.caption.." v"..APP_VERSION_MAJOR.."."..APP_VERSION_MINOR,1,color.white,color.blue,__ALEFT)
 	screen.print(641,10,os.date("%r  %d/%m/%y"),1,color.white,color.blue,__ALEFT)
 
 
@@ -126,9 +122,9 @@ while true do
     if sel == 1 then modprev01() end
 --	if sel == 2 then modprev02() end
 	if buttons.cross then
-		if sel == 1 then modinstall01()
-		elseif sel == 2 then custom_msg(strings.future_msg,0)
-			elseif sel == 3 then modreset()
+		if sel == 1 then if custom_msg(strings.qlinst01,1) == true then modinstall01() end
+		elseif sel == 2 then modinstall02() --custom_msg(strings.qlinst02,1) == true then modinstall02() end
+			elseif sel == 3 then if custom_msg(strings.cleardata,1) == true then modreset() end
 				elseif sel == 4 then os.exit() buttons.homepopup(1)
 		end
 	end
