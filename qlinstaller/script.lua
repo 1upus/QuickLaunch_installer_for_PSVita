@@ -100,7 +100,7 @@ while true do
 	if back then back:blit(0,0) end
 	draw.fillrect(0,0,960,30, 0x64545353) --UP
 	screen.print(10,10,strings.caption.." v"..APP_VERSION_MAJOR.."."..APP_VERSION_MINOR,1,color.white,color.blue,__ALEFT)
-	screen.print(641,10,os.date("%r  %d/%m/%y"),1,color.white,color.blue,__ALEFT)
+	screen.print(641,10,os.date("%R  %d/%m/%y"),1,color.white,color.blue,__ALEFT)
 
 
 	local y = 45
