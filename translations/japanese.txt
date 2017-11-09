@@ -1,0 +1,37 @@
+--Texts (only text in " ")
+strings = {
+
+-- QL script.lua
+caption =       "QuickLaunch Installer",
+unsafe =		"UNSAFE MODEを有効にして下さい",
+menuline01 =    "デフォルトのQLデータをインストール",
+menuline02 =    "ユーザーのQLデータをインストール",
+menuline03 =    "インストールしたQLデータを消去",
+menuline04 =    "アプリを終了",
+
+-- QL common.lua
+future_msg =    "Function reserved for future releases.",
+qlinst01 =      "デフォルトのQLデータをインストールして、PS Vitaを再起動しますか？",
+qlinst02 =      "userapps.iniからQLデータをインストールして、PS Vitaを再起動しますか？",
+cleardata =     "インストールしたQLデータを消去して、PS Vitaを再起動しますか？\n\n※SCEのデータは次回インターネット接続時に復元されます。",
+preview =       "プレビュー：QuickLaunchインストール後のショートカット",
+
+unk =			"UNK",
+
+--custom message
+title_msg =		"システムメッセージ",
+option_msg =	"OK",
+option1_msg =	"はい",
+option2_msg =	"いいえ",
+
+--updater.lua
+update_msg1 =   "が利用可能です。",
+update_msg2 =   "QuickLaunch Installerを更新しますか？",
+downupdate =    "アップデートファイルをダウンロード中...",
+size_msg =      "サイズ",
+written_msg =   "書き込み中",
+speed_msg =     "スピード",
+percent_msg =   "％",
+kbs_msg =       "Kb/s",
+
+}
