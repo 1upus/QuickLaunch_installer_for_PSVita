@@ -68,9 +68,10 @@ Please report me if it helps and your language, I'll make needed font loading au
 Also you can add you custom translation to my repo, just fork it and add your translation to "translations" folder and make pull request.
 
 ** Todo: **
-
-- Optimize specific font loading translations 
+ 
 - Add support for userfriendly custom shortcuts installation.
+
+- Add translation download from repo if exists
 
 ** Thx **
 
