@@ -7,20 +7,16 @@
 	based on sources from Team OneLua
 ]]
 
--- Set path
-local uxpath = "ux0:data/qlinstall/"
-local urpath = "ur0:shell/whats_new/np/"
-
 -- Install default QL data function
 function modinstall01()
  buttons.homepopup(0)
- files.delete(urpath.."img")
- files.mkdir(urpath.."img/")
- files.delete(urpath.."whatsnew.xml")
- files.copy("resources/installer/app01.png",urpath.."img/")
- files.copy("resources/installer/app02.png",urpath.."img/")
- files.copy("resources/installer/app03.png",urpath.."img/")
- files.copy("resources/installer/whatsnew.xml",urpath)
+ files.delete(__URPATH.."img")
+ files.mkdir(__URPATH.."img/")
+ files.delete(__URPATH.."whatsnew.xml")
+ files.copy("resources/installer/app01.png",__URPATH.."img/")
+ files.copy("resources/installer/app02.png",__URPATH.."img/")
+ files.copy("resources/installer/app03.png",__URPATH.."img/")
+ files.copy("resources/installer/whatsnew.xml",__URPATH)
  os.delay(500)
  buttons.homepopup(1)
  power.restart()
@@ -29,25 +25,31 @@ function modinstall01()
 -- Install user mod data function
 function modinstall02()
  buttons.homepopup(0)
- if files.exists(uxpath.."userapps.ini") then dofile(uxpath.."userapps.ini")
- custom_msg(userapps.id01.." "..userapps.path01.."\n\n"..userapps.id02.." "..userapps.path02.."\n\n"..userapps.id03.." "..userapps.path03,0) end
- --files.delete(urpath.."img")
- --files.mkdir(urpath.."img/")
- --files.delete(urpath.."whatsnew.xml")
- --if files.exists(uxpath.."app01.png") then files.copy(uxpath.."app01.png",urpath.."img/") end
- --if files.exists(uxpath.."app02.png") then files.copy(uxpath.."app02.png",urpath.."img/") end
- --if files.exists(uxpath.."app03.png") then files.copy(uxpath.."app03.png",urpath.."img/") end
- --if files.exists(uxpath.."whatsnew.xml") then files.copy(uxpath.."whatsnew.xml",urpath)  end
- os.delay(500)
+  if files.exists(__UXPATH.."userapps.ini") then dofile(__UXPATH.."userapps.ini")
+   if userapps.id01 and userapps.id02 and userapps.id03 and userapps.path01 and userapps.path02 and userapps.path03
+   then
+   custom_msg(userapps.id01.." "..userapps.path01.."\n\n"..userapps.id02.." "..userapps.path02.."\n\n"..userapps.id03.." "..userapps.path03,0)
+   else
+   custom_msg("Something wrong with your userapps.ini",0)
+   end
+  end
+ --files.delete(__URPATH.."img")
+ --files.mkdir(__URPATH.."img/")
+ --files.delete(__URPATH.."whatsnew.xml")
+ --if files.exists(__UXPATH.."app01.png") then files.copy(__UXPATH.."app01.png",__URPATH.."img/") end
+ --if files.exists(__UXPATH.."app02.png") then files.copy(__UXPATH.."app02.png",__URPATH.."img/") end
+ --if files.exists(__UXPATH.."app03.png") then files.copy(__UXPATH.."app03.png",__URPATH.."img/") end
+ --if files.exists(__UXPATH.."whatsnew.xml") then files.copy(__UXPATH.."whatsnew.xml",__URPATH)  end
+ --os.delay(500)
  buttons.homepopup(1)
  --power.restart()
 end
 
 -- Reset mod data function
 function modreset()
- files.delete(urpath.."img")
- files.mkdir(urpath.."img/")
- files.delete(urpath.."whatsnew.xml")
+ files.delete(__URPATH.."img")
+ files.mkdir(__URPATH.."img/")
+ files.delete(__URPATH.."whatsnew.xml")
  os.delay(500)
  power.restart()
 end
@@ -80,7 +82,7 @@ function onAppInstall(step, size_argv, written, file, totalsize, totalwritten)
 		return 10 -- Ok
 	elseif step == 4 then											-- Installing
 	    draw.fillrect(0,0,960,30, 0x64545353) --UP
-        screen.print(10,10,strings.caption.." v"..APP_VERSION_MAJOR.."."..APP_VERSION_MINOR,1,color.white,color.blue,__ALEFT)
+        screen.print(10,10,strings.caption.." v"..ver,1,color.white,color.blue,__ALEFT)
 		screen.print(75,75,"Installing...",1,color.white,color.blue)
 		screen.print(10,435,title, 0.9, color.white, color.green, __ALEFT)
 		screen.print(10,470,version, 0.9, color.white, color.green, __ALEFT)
@@ -94,7 +96,7 @@ end
 function init_msg(msg)
 	if back then back:blit(0,0) end
 	draw.fillrect(0,0,960,30, 0x64545353) --UP
-	screen.print(10,10,strings.caption.." v"..APP_VERSION_MAJOR.."."..APP_VERSION_MINOR,1,color.white,color.blue,__ALEFT)
+	screen.print(10,10,strings.caption.." v"..ver,1,color.white,color.blue,__ALEFT)
 	screen.print(70, 50, msg, 1.0, color.white, color.cyan:a(100))
 	screen.flip()
 	os.delay(10)
@@ -131,18 +133,12 @@ function custom_msg(printtext,mode)
 		screen.print(xtext,200, printtext,1, color.gray)
 
 		if mode == 0 then
-			font.setdefault(charfont) 
-			screen.print(xopt1+110,360, SYMBOL_CROSS,1.02, color.gray) 
-			font.setdefault(textfont)
+		    screen.print(char_fnt,xopt1+110,360, SYMBOL_CROSS,1.02, color.gray) 
 			screen.print(xopt1+130,360, ": "..strings.option_msg,1.02, color.gray)
 		else
-			font.setdefault(charfont)
-			screen.print(xopt1-10,360, SYMBOL_CROSS,1.02, color.gray) 
-			font.setdefault(textfont)
+		    screen.print(char_fnt,xopt1-10,360, SYMBOL_CROSS,1.02, color.gray) 
 			screen.print(xopt1+10,360, ": "..strings.option1_msg,1.02, color.gray)
-			font.setdefault(charfont)
-			screen.print(xopt2-10,360, SYMBOL_CIRCLE,1.02, color.gray)
-			font.setdefault(textfont)
+		    screen.print(char_fnt,xopt2-10,360, SYMBOL_CIRCLE,1.02, color.gray) 
 			screen.print(xopt2+10,360, ": "..strings.option2_msg,1.02, color.gray)
 		end
 
