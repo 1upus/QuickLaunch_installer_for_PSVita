@@ -126,8 +126,8 @@ while true do
 	screen.print(10,7,strings.caption.." v"..ver,1,color.white,color.blue,__ALEFT)
 	time_format = os.getreg("/CONFIG/DATE/", "time_format" , 1)
 	 if time_format == 0 
-	  then screen.print(900,7,os.date("%d/%m/%y  %x"),1,color.white,color.blue,__ARIGHT)
-	  else screen.print(900,7,os.date("%d/%m/%y  %X"),1,color.white,color.blue,__ARIGHT)
+	  then screen.print(640,10,os.date("%A %d %B %Y %X"),1,color.white,color.blue,__ALEFT)
+	  else screen.print(640,10,os.date("%A %d %B %Y %X"),1,color.white,color.blue,__ALEFT)
 	 end
 	 --screen.print(900,7,os.date("%A %d %B %Y %X"),1,color.white,color.blue,__ARIGHT)
 
