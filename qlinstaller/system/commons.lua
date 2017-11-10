@@ -25,12 +25,12 @@ function modinstall01()
 -- Install user mod data function
 function modinstall02()
  buttons.homepopup(0)
-   if userapps.id01 and userapps.id02 and userapps.id03 and userapps.path01 and userapps.path02 and userapps.path03
-   then
-   custom_msg(userapps.id01.." "..userapps.path01.."\n\n"..userapps.id02.." "..userapps.path02.."\n\n"..userapps.id03.." "..userapps.path03,0)
-   else
-   custom_msg("Something wrong with your userapps.ini",0)
-  end
+   if __APP01SHOW and __APP02SHOW and __APP03SHOW and __APP01PATH and __APP02PATH and __APP03PATH
+    then
+     custom_msg(__APP01SHOW.." "..__APP01PATH.."\n\n"..__APP02SHOW.." "..__APP02PATH.."\n\n"..__APP03SHOW.." "..__APP03PATH,0)
+    else
+     custom_msg("ini error",0)
+   end
  --files.delete(__URPATH.."img")
  --files.mkdir(__URPATH.."img/")
  --files.delete(__URPATH.."whatsnew.xml")

@@ -94,7 +94,14 @@ dofile("git/updater.lua")
 
 ------------------------------------------Main--------------------------------------------------------------
  -- Read userdata from .ini if exists (just once)
- if files.exists(__UXPATH.."userapps.ini") then dofile(__UXPATH.."userapps.ini") end
+ if files.exists(__UXPATH.."userapps.ini") then __PATHINI=(__UXPATH.."userapps.ini")
+  __APP01SHOW = tonumber(ini.read(__PATHINI,"app01","show",100))
+  __APP02SHOW = tonumber(ini.read(__PATHINI,"app02","show",100))
+  __APP03SHOW = tonumber(ini.read(__PATHINI,"app03","show",100))
+  __APP01PATH = tostring(ini.read(__PATHINI,"app01","path",100))
+  __APP02PATH = tostring(ini.read(__PATHINI,"app02","path",100))
+  __APP03PATH = tostring(ini.read(__PATHINI,"app03","path",100))
+ end
 
 options = { strings.menuline01, strings.menuline02, strings.menuline03, strings.menuline04}
 sel = 1
