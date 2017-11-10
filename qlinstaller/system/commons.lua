@@ -25,13 +25,11 @@ function modinstall01()
 -- Install user mod data function
 function modinstall02()
  buttons.homepopup(0)
-  if files.exists(__UXPATH.."userapps.ini") then dofile(__UXPATH.."userapps.ini")
    if userapps.id01 and userapps.id02 and userapps.id03 and userapps.path01 and userapps.path02 and userapps.path03
    then
    custom_msg(userapps.id01.." "..userapps.path01.."\n\n"..userapps.id02.." "..userapps.path02.."\n\n"..userapps.id03.." "..userapps.path03,0)
    else
    custom_msg("Something wrong with your userapps.ini",0)
-   end
   end
  --files.delete(__URPATH.."img")
  --files.mkdir(__URPATH.."img/")
@@ -82,7 +80,7 @@ function onAppInstall(step, size_argv, written, file, totalsize, totalwritten)
 		return 10 -- Ok
 	elseif step == 4 then											-- Installing
 	    draw.fillrect(0,0,960,30, 0x64545353) --UP
-        screen.print(10,10,strings.caption.." v"..ver,1,color.white,color.blue,__ALEFT)
+        screen.print(10,7,strings.caption.." v"..ver,1,color.white,color.blue,__ALEFT)
 		screen.print(75,75,"Installing...",1,color.white,color.blue)
 		screen.print(10,435,title, 0.9, color.white, color.green, __ALEFT)
 		screen.print(10,470,version, 0.9, color.white, color.green, __ALEFT)
@@ -96,7 +94,7 @@ end
 function init_msg(msg)
 	if back then back:blit(0,0) end
 	draw.fillrect(0,0,960,30, 0x64545353) --UP
-	screen.print(10,10,strings.caption.." v"..ver,1,color.white,color.blue,__ALEFT)
+	screen.print(10,7,strings.caption.." v"..ver,1,color.white,color.blue,__ALEFT)
 	screen.print(70, 50, msg, 1.0, color.white, color.cyan:a(100))
 	screen.flip()
 	os.delay(10)

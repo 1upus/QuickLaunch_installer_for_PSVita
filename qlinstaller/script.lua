@@ -25,6 +25,7 @@ if not files.exists(__UXPATH.."userapps.ini") then files.copy("resources/install
 -- Loading UI GFX
 back = image.load("resources/back.jpg")
 box = image.load("resources/box.png")
+battery = image.load("resources/battery.png")
 defapp01 = image.load ("resources/installer/app01.png")
 defapp02 = image.load ("resources/installer/app02.png")
 defapp03 = image.load ("resources/installer/app03.png")
@@ -103,9 +104,24 @@ while true do
 	buttons.read()
 
 	if back then back:blit(0,0) end
-	draw.fillrect(0,0,960,30, 0x64545353) --UP
-	screen.print(10,10,strings.caption.." v"..ver,1,color.white,color.blue,__ALEFT)
-	screen.print(641,10,os.date("%r  %d/%m/%y"),1,color.white,color.blue,__ALEFT)
+	draw.fillrect(0,0,960,30, 0x64545353) -- caption bg
+	batx = 910
+	baty = 6
+	battpercent = batt.lifepercent()
+	 draw.fillrect(batx,baty+5,3,10, color.white:a(150))    -- draw battery contour -- 3 strings
+	 draw.fillrect(batx+3,baty,37,20, color.white:a(150))
+	 draw.fillrect(batx+5,baty+2,33,16, color.black:a(50))
+	if battpercent >= 80 then draw.fillrect(batx+38,baty+2,-33,16, color.green:a(150)) end
+	if battpercent >= 60 and battpercent <80 then draw.fillrect(batx+38,baty+2,-27,16, color.green:a(150)) end
+	if battpercent >= 40 and battpercent <60 then draw.fillrect(batx+38,baty+2,-21,16, color.green:a(150)) end
+    if battpercent >= 20 and battpercent <40 then draw.fillrect(batx+38,baty+2,-14,16, color.green:a(150)) end
+    if battpercent >= 1 and battpercent <20 then draw.fillrect(batx+38,baty+2,-7,16, color.red:a(150)) end	
+	screen.print(10,7,strings.caption.." v"..ver,1,color.white,color.blue,__ALEFT)
+	time_format = os.getreg("/CONFIG/DATE/", "time_format" , 1)
+	 if time_format == 0 
+	  then screen.print(900,7,os.date("%d/%m/%y  %r"),1,color.white,color.blue,__ARIGHT)
+	  else screen.print(900,7,os.date("%d/%m/%y  %R"),1,color.white,color.blue,__ARIGHT)
+	 end
 
 	local y = 45
 	for i=1,#options do
