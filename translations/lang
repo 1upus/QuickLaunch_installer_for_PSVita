@@ -1,0 +1,37 @@
+--Texts (only text in " ")
+strings = {
+
+-- QL script.lua
+caption =       "QuickLaunch Installer v0.1",
+unsafe =		"Le mode UNSAFE est requis pour utilisé ce homebrew !!!",
+menuline01 =    "Installer les données QL par défaut",
+menuline02 =    "Installer les données QL personalisées",
+menuline03 =    "Réinitialiser toutes les données QL installées",
+menuline04 =    "Retour sur le LiveArea",
+
+-- QL common.lua
+future_msg =    "\nFonction réservée pour les futurs versions.",
+qlinst01 =      "\nQuickLaunch a été installé.\n\nVotre console va redemarrée pour appliquer les changements.",
+qlinst02 =      "\nQuickLaunch perssonalisée a été installé.\n\nVotre console va redemarrée pour appliquer les changements.",
+cleardata =     "\nToutes les données QuickLaunch ont été effacé.\nLes données par défaut seront installé lors de votre\nprochaine connexion internet.\n\nVotre console va redemarrée.",
+preview =       "Aperçu des raccourcis QuickLaunch qui seront installés.",
+
+unk =			"UNK",
+
+--custom message
+title_msg =		"QuickLaunch Installer",
+option_msg =	"OK",
+option1_msg =	"Oui",
+option2_msg =	"Non",
+
+--updater.lua
+update_msg1 =   "est disponible.",
+update_msg2 =   "Voulez-vous mettre à jour l'application?",
+downupdate =    "Téléchargement de la mise à jour...",
+size_msg =      "Poids",
+written_msg =   "Ecriture",
+speed_msg =     "Vitesse",
+percent_msg =   "%",
+kbs_msg =       "Kb/s",
+
+}
