@@ -33,5 +33,5 @@ written_msg =   "Ecriture",
 speed_msg =     "Vitesse",
 percent_msg =   "%",
 kbs_msg =       "Kb/s",
-
+ 
 }
