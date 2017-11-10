@@ -11,16 +11,16 @@ menuline04 =    "Ritorna al LiveArea",
 
 -- QL common.lua
 future_msg =    "Funzione riservata per versioni future.",
-qlinst01 =      "I dati del QuickLaunch sono stati installati.\n\nRiavviare la PSVITA per rendere effettive le modifiche.",
-qlinst02 =      "I dati User del QuickLaunch sono stati installati.\n\nRiavviare la PSVITA per rendere effettive le modifiche.",
-cleardata =     "Tutti i dati del QuickLanch sono stati cancellati.\nI dati di default SCE verrano ripristinati alla prossima\nconnessione internet .\n\nRiavviare la PSVITA per rendere effettive le modifiche.",
+qlinst01 =      "Installare i dati QuickLaunch predefiniti e riavviare la PS Vita?.",
+qlinst02 =      "Installare i dati di QuickLaunch da userapps.ini e riavviare la PS Vita?",
+cleardata =     "Eliminare i dati correnti di QuickLaunch e riavviare la PS Vita?.\nI dati di default SCE verrano ripristinati alla prossima\nconnessione internet.",
 preview =       "Anteprima: scorciatoie per l'installazione del QuickLaunch.",
 
 unk =			"UNK",
 
 --custom message
 title_msg =		"Messaggio di Sistema",
-option_msg =	"OK",
+option_msg =	"Ok",
 option1_msg =	"Si",
 option2_msg =	"No",
 
