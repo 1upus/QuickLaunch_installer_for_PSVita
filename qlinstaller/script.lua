@@ -103,6 +103,18 @@ dofile("git/updater.lua")
   __APP03PATH = tostring(ini.read(__PATHINI,"app03","path",100))
  end
 
+__XMLS01  = "<nsx><spc>"
+__XMLS020 = "<mtrl anno=\"\" from=\"2001-01-01T00:00:00.000Z\" id=\"0\" lastm=\"2001-01-01T00:00:00.000Z\" mname=\"\" until=\"2100-12-31T23:59:00.000Z\">"
+__XMLS021 = "<mtrl anno=\"\" from=\"2001-01-01T00:00:00.000Z\" id=\"1\" lastm=\"2001-01-01T00:00:00.000Z\" mname=\"\" until=\"2100-12-31T23:59:00.000Z\">"
+__XMLS031 = "<url>app01.png</url>"
+__XMLS032 = "<url>app02.png</url>"
+__XMLS033 = "<url>app03.png</url>"
+__XMLS041 = "<target type=\"u\">psgm:play?titleid="..__APP01PATH.."</target>"
+__XMLS042 = "<target type=\"u\">psgm:play?titleid="..__APP02PATH.."</target>"
+__XMLS043 = "<target type=\"u\">psgm:play?titleid="..__APP03PATH.."</target>"
+__XMLS05  = "<cntry agelmt=\"0\">all</cntry> <lang>all</lang></mtrl>"
+__XMLS06  = "</spc></nsx>"
+ 
 options = { strings.menuline01, strings.menuline02, strings.menuline03, strings.menuline04}
 sel = 1
 
@@ -129,7 +141,6 @@ while true do
 	  then screen.print(900,7,os.date("%d/%m/%y  %x"),1,color.white,color.blue,__ARIGHT)
 	  else screen.print(900,7,os.date("%d/%m/%y  %X"),1,color.white,color.blue,__ARIGHT)
 	 end
-	 --screen.print(900,7,os.date("%A %d %B %Y %X"),1,color.white,color.blue,__ARIGHT)
 
 	local y = 45
 	for i=1,#options do

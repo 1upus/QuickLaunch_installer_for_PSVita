@@ -27,7 +27,8 @@ function modinstall02()
  buttons.homepopup(0)
    if __APP01SHOW and __APP02SHOW and __APP03SHOW and __APP01PATH and __APP02PATH and __APP03PATH
     then
-     custom_msg(__APP01SHOW.." "..__APP01PATH.."\n\n"..__APP02SHOW.." "..__APP02PATH.."\n\n"..__APP03SHOW.." "..__APP03PATH,0)
+     --custom_msg(__APP01SHOW.." "..__APP01PATH.."\n\n"..__APP02SHOW.." "..__APP02PATH.."\n\n"..__APP03SHOW.." "..__APP03PATH,0)
+	 custom_msg(__XMLS041,0)
     else
      custom_msg("ini error",0)
    end

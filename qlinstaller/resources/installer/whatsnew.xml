@@ -2,19 +2,13 @@
 <mtrl anno="" from="2001-01-01T00:00:00.000Z" id="1" lastm="2001-01-01T00:00:00.000Z" mname="" until="2100-12-31T23:59:00.000Z">
  <url>app01.png</url>
  <target type="u">psgm:play?titleid=VITASHELL</target>
- <cntry agelmt="0">all</cntry>
- <lang>all</lang>
-</mtrl>
+ <cntry agelmt="0">all</cntry> <lang>all</lang></mtrl>
 <mtrl anno="" from="2001-01-01T00:00:00.000Z" id="2" lastm="2001-01-01T00:00:00.000Z" mname="" until="2100-12-31T23:59:00.000Z">
  <url>app02.png</url>
  <target type="u">psgm:play?titleid=PSPEMUCFW</target>
- <cntry agelmt="0">all</cntry>
- <lang >all</lang>
-</mtrl>
+ <cntry agelmt="0">all</cntry> <lang >all</lang> </mtrl>
 <mtrl anno="" from="2001-01-01T00:00:00.000Z" id="3" lastm="2001-01-01T00:00:00.000Z" mname="" until="2100-12-31T23:59:00.000Z" >
  <url>app03.png</url>
  <target type="u">psgm:play?titleid=PKGI00000</target>
- <cntry agelmt="0">all</cntry>
- <lang>all</lang>
-</mtrl>
+ <cntry agelmt="0">all</cntry> <lang>all</lang> </mtrl>
 </spc></nsx>
