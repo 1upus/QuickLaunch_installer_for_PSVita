@@ -10,7 +10,10 @@
 game.close()
 color.loadpalette()
 
--- Set path (GLOBLAL)
+-- Functions
+dofile("system/commons.lua")
+
+-- Set path (GLOBAL)
 __UXPATH = "ux0:data/qlinstall/"
 files.mkdir(__UXPATH)
 __URPATH = "ur0:shell/whats_new/np/"
@@ -36,29 +39,11 @@ userapp03 = image.load (__UXPATH.."app03.png")
 -- Reading system language
 __LANG = os.language()
 
--- Loading sa0 fonts for translations
-charfont = "sa0:data/font/pvf/psexchar.pvf"
-cnfont = "sa0:data/font/pvf/cn0.pvf"
-jpnfont = "sa0:data/font/pvf/jpn0.pvf"
-ltnfont = "sa0:data/font/pvf/ltn4.pvf"
-krfont = "sa0:data/font/pvf/kr0.pvf"
+-- Loading sa0 fonts and setting up
+setupfonts()
 
-char_fnt = font.load(charfont)
-if __LANG == "RUSSIAN" or __LANG == "POLISH"  then font.setdefault(ltnfont) else font.setdefault(jpnfont) end
-
-
--- Loading Special chars
-if char_fnt then -- Use oficial ps symbols. Will not work without preloaded psexchr.pvf font
-SYMBOL_CROSS	= "&"
-SYMBOL_SQUARE   = "'"
-SYMBOL_TRIANGLE = "$"
-SYMBOL_CIRCLE	= "%"
-else char_fnt = font.load(jpnfont)
-SYMBOL_CROSS	= string.char(0xe2)..string.char(0x95)..string.char(0xb3)
-SYMBOL_SQUARE	= string.char(0xe2)..string.char(0x96)..string.char(0xa1)
-SYMBOL_TRIANGLE	= string.char(0xe2)..string.char(0x96)..string.char(0xb3)
-SYMBOL_CIRCLE	= string.char(0xe2)..string.char(0x97)..string.char(0x8b)
-end
+-- Loading Special chars 
+preloadsymbols()
 
 -- reading lang strings from ux0:data/qlinstall/ if exist
 if files.exists(__UXPATH.."lang/"..__LANG..".txt") then dofile(__UXPATH.."lang/"..__LANG..".txt")
@@ -86,21 +71,18 @@ if os.access() == 0 then
 	os.exit()
 end
 
--- Functions
-dofile("system/commons.lua")
-
 -- Auto-Update
 dofile("git/updater.lua")
 
 ------------------------------------------Main--------------------------------------------------------------
  -- Read userdata from .ini if exists (just once)
  if files.exists(__UXPATH.."userapps.ini") then __PATHINI=(__UXPATH.."userapps.ini")
-  __APP01SHOW = tonumber(ini.read(__PATHINI,"app01","show",100))
-  __APP02SHOW = tonumber(ini.read(__PATHINI,"app02","show",100))
-  __APP03SHOW = tonumber(ini.read(__PATHINI,"app03","show",100))
-  __APP01PATH = tostring(ini.read(__PATHINI,"app01","path",100))
-  __APP02PATH = tostring(ini.read(__PATHINI,"app02","path",100))
-  __APP03PATH = tostring(ini.read(__PATHINI,"app03","path",100))
+  __APP01SHOW = tonumber(ini.read(__PATHINI,"app01","show",1))
+  __APP02SHOW = tonumber(ini.read(__PATHINI,"app02","show",1))
+  __APP03SHOW = tonumber(ini.read(__PATHINI,"app03","show",1))
+  __APP01PATH = tostring(ini.read(__PATHINI,"app01","path",1))
+  __APP02PATH = tostring(ini.read(__PATHINI,"app02","path",1))
+  __APP03PATH = tostring(ini.read(__PATHINI,"app03","path",1))
  end
 
 __XMLS01  = "<nsx><spc>"
