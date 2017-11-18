@@ -1,5 +1,5 @@
 # QuickLaunch Installer for PS Vita
-[![Downloads][img_downloads]
+[![Downloads][img_downloads][QuickLaunch_installer_for_PSVita_downloads]
 ![header](quicklaunch_preview.jpg)
 
 ** About **
