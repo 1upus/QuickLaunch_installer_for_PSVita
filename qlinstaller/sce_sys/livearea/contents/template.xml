@@ -10,7 +10,7 @@
 	<frame id="frame2">
 		<liveitem>
 			<text valign="bottom" align="left" text-align="left" text-valign="bottom" line-space="3" ellipsis="on">
-				<str color="#ffffff" size="34" bold="on" shadow="on">QuickLanch Installer</str>
+				<str color="#ffffff" size="34" bold="on" shadow="on">QuickLaunch Installer</str>
 			</text>
 		</liveitem>
 	</frame>
@@ -26,7 +26,7 @@
 	<frame id="frame4">
 		<liveitem>
 			<text valign="top" align="left" text-align="left" text-valign="top" line-space="2" ellipsis="on">
-				<str size="21" bold="on" shadow="on">®2017 1upus</str>
+				<str size="21" bold="on" shadow="on">®2018 1upus</str>
 			</text>
 		</liveitem>
 	</frame>
